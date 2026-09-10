@@ -30,9 +30,22 @@ def novo_orçamento():
     valor_desconto = total * (desconto /100)
     total_final = total - valor_desconto
 
-    print(f"Desconto: R$ {valor_desconto:.2f}")
+    print("\n" + "=" * 40)
+    print("        RESUMO DO ORÇAMENTO")
+    print("=" * 40)
 
-    print(f"Total Final: R$ {total_final:.2f}") 
+    print(f"Serviço: {servico}") 
+    print(f"Descrição: {descricao}")
+    print(f"Quantidade: {quantidade}")
+    print(f"Valor Unitário: R$ {valor_unitario:.2f}")
+
+    print("-" * 40)
+
+    print(f"Subtotal: R$ {total:.2f}")
+    print(f"Desconto ({desconto:.0f}%): R$ {valor_desconto:.2f}")
+    print(f"TOTAL FINAL: R$ {total_final:.2f}")
+
+    print("-" * 40)
 
 def main():
     while True:
