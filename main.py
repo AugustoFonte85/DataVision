@@ -3,17 +3,36 @@ def novo_orçamento():
 
     print("\n--- NOVO ORÇAMENTO ---")
     print(f"Orçamento N° {numero_orcamento}")
-    
+
+    print("\nDADOS DO CLIENTE")
+
     cliente = input("Cliente: ")
     endereço = input("Endereço: ")
     telefone = input("Telefone: ")
     email = input("E-mail: ")
     contato = input("Contato: ")
-    cep = input("CEP:")
+    cep = input("CEP: ")
     cidade = input("Cidade: ")
     bairro = input("Bairro: ")
     cnpj = input("CNPJ: ")
     inscrição = input("IE: ")
+
+    print("\nDADOS DO ORÇAMENTO")
+
+    servico = input("\nServiço: ")
+    descricao = input("Descrição: ")
+    quantidade = int(input("Quantidade: "))
+    valor_unitario = float(input("Valor Unitário: "))
+
+    total = quantidade * valor_unitario
+    desconto = float(input("Desconto (%): "))
+
+    valor_desconto = total * (desconto /100)
+    total_final = total - valor_desconto
+
+    print(f"Desconto: R$ {valor_desconto:.2f}")
+
+    print(f"Total Final: R$ {total_final:.2f}") 
 
 def main():
     while True:
