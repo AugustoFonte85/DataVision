@@ -1,3 +1,5 @@
+from datetime import datetime
+
 def novo_orçamento():
     numero_orcamento = 1
 
@@ -46,6 +48,21 @@ def novo_orçamento():
     print(f"TOTAL FINAL: R$ {total_final:.2f}")
 
     print("-" * 40)
+
+    print("\nCONDIÇÕES DO ORÇAMENTO")
+
+    prazo = input("Prazo de Execução: ")
+    validade = input("Validade da Proposta: ")
+    forma_pagamento = input("Forma de Pagamento: ")
+
+    print("\nFINALIZAÇÃO")
+
+    data_emissao = datetime.now().strftime("%d/%m/%Y")
+    assinatura = input("Assinatura: ")
+
+    print(f"Data da Emissão: {data_emissao}")
+
+    
 
 def main():
     while True:
