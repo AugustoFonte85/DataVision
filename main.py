@@ -8,43 +8,50 @@ def novo_orçamento():
 
     print("\nDADOS DO CLIENTE")
 
-    cliente = input("Cliente: ")
-    endereço = input("Endereço: ")
-    telefone = input("Telefone: ")
-    email = input("E-mail: ")
-    contato = input("Contato: ")
-    cep = input("CEP: ")
-    cidade = input("Cidade: ")
-    bairro = input("Bairro: ")
-    cnpj = input("CNPJ: ")
-    inscrição = input("IE: ")
+    dados_cliente = {
+
+        "cliente" : input("Cliente: "),
+        "endereco" : input("Endereço: "),
+        "telefone" : input("Telefone: "),
+        "email" : input("E-mail: "),
+        "contato" : input("Contato: "),
+        "cep" : input("CEP: "),
+        "cidade" : input("Cidade: "),
+        "bairro" : input("Bairro: "),
+        "cnpj" : input("CNPJ: "),
+        "ie" : input("IE: ")
+    }
 
     print("\nDADOS DO ORÇAMENTO")
 
-    servico = input("\nServiço: ")
-    descricao = input("Descrição: ")
-    quantidade = int(input("Quantidade: "))
-    valor_unitario = float(input("Valor Unitário: "))
+    dados_orcamento = {
 
-    total = quantidade * valor_unitario
-    desconto = float(input("Desconto (%): "))
+        "servico": input("Serviço: "),
+        "descricao": input("Descrição: "),
+        "quantidade": int(input("Quantidade: ")),
+        "valor_unitario": float(input("Valor Unitário: ")),
+        "desconto": float(input("Desconto (%): "))
+    }
 
-    valor_desconto = total * (desconto /100)
-    total_final = total - valor_desconto
+    total = dados_orcamento["quantidade"] * dados_orcamento["valor_unitario"]
+
+    valor_desconto = total * (dados_orcamento["desconto"] / 100)
+    total_final = total - valor_desconto 
+
 
     print("\n" + "=" * 40)
     print("        RESUMO DO ORÇAMENTO")
     print("=" * 40)
 
-    print(f"Serviço: {servico}") 
-    print(f"Descrição: {descricao}")
-    print(f"Quantidade: {quantidade}")
-    print(f"Valor Unitário: R$ {valor_unitario:.2f}")
+    print(f"Serviço: {dados_orcamento['servico']}") 
+    print(f"Descrição: {dados_orcamento['descricao']}")
+    print(f"Quantidade: {dados_orcamento['quantidade']}")
+    print(f"Valor Unitário: R$ {dados_orcamento['valor_unitario']:.2f}")
 
     print("-" * 40)
 
     print(f"Subtotal: R$ {total:.2f}")
-    print(f"Desconto ({desconto:.0f}%): R$ {valor_desconto:.2f}")
+    print(f"Desconto ({dados_orcamento['desconto']}%): R$ {valor_desconto:.2f}")
     print(f"TOTAL FINAL: R$ {total_final:.2f}")
 
     print("-" * 40)
@@ -63,7 +70,6 @@ def novo_orçamento():
     print(f"Data da Emissão: {data_emissao}")
 
     
-
 def main():
     while True:
 
