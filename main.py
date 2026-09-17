@@ -33,6 +33,12 @@ def novo_orçamento():
         "desconto": float(input("Desconto (%): "))
     }
 
+    orcamento = {
+        "numero" : numero_orcamento,
+        "cliente" : dados_cliente,
+        "dados_orcamento" : dados_orcamento
+    }
+
     total = dados_orcamento["quantidade"] * dados_orcamento["valor_unitario"]
 
     valor_desconto = total * (dados_orcamento["desconto"] / 100)
